@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Input Database</title>
+    <link rel="stylesheet" href="../static/data_base.css">
+</head>
+<body class="database-page">
+    <div class="container">
+        <h2>User Input Database</h2>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Sex</th>
+                    <th>Chest Pain Type</th>
+                    <th>Resting BP</th>
+                    <th>Cholesterol</th>
+                    <th>FBS</th>
+                    <th>Resting ECG</th>
+                    <th>Max Heart Rate</th>
+                    <th>Exercise Induced Angina</th>
+                    <th>Oldpeak</th>
+                    <th>Slope</th>
+                    <th>CA</th>
+                    <th>Thal</th>
+                    <th>Prediction</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for input in user_inputs %}
+                <tr>
+                    <td>{{ input.id }}</td>
+                    <td>{{ input.name }}</td>
+                    <td>{{ input.age }}</td>
+                    <td>{{ input.sex }}</td>
+                    <td>{{ input.cp }}</td>
+                    <td>{{ input.trestbps }}</td>
+                    <td>{{ input.chol }}</td>
+                    <td>{{ input.fbs }}</td>
+                    <td>{{ input.restecg }}</td>
+                    <td>{{ input.thalach }}</td>
+                    <td>{{ input.exang }}</td>
+                    <td>{{ input.oldpeak }}</td>
+                    <td>{{ input.slope }}</td>
+                    <td>{{ input.ca }}</td>
+                    <td>{{ input.thal }}</td>
+                    <td>{{ input.prediction }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <!-- Add a Logout button -->
+        <div>
+            <a href="{{ url_for('logout') }}">
+                <button type="button">Logout</button>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

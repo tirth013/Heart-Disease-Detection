@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Disease Detection</title>
+    <link rel="stylesheet" href="../static/index.css">
+    <script>
+        function validateForm(event) {
+            const age = document.forms["userInputForm"]["age"].value;
+            const sex = document.forms["userInputForm"]["sex"].value;
+            const cp = document.forms["userInputForm"]["cp"].value;
+            const trestbps = document.forms["userInputForm"]["trestbps"].value;
+            const chol = document.forms["userInputForm"]["chol"].value;
+            const fbs = document.forms["userInputForm"]["fbs"].value;
+            const restecg = document.forms["userInputForm"]["restecg"].value;
+            const thalach = document.forms["userInputForm"]["thalach"].value;
+            const exang = document.forms["userInputForm"]["exang"].value;
+            const oldpeak = document.forms["userInputForm"]["oldpeak"].value;
+            const slope = document.forms["userInputForm"]["slope"].value;
+            const ca = document.forms["userInputForm"]["ca"].value;
+            const thal = document.forms["userInputForm"]["thal"].value;
+
+            if (age < 20 || age > 100) {
+                alert("Please enter a valid age (20-100).");
+                event.preventDefault();
+                return false;
+            }
+            if (sex < 0 || sex > 1) {
+                alert("Please enter a valid sex (1 = male, 0 = female).");
+                event.preventDefault();
+                return false;
+            }
+            if (cp < 0 || cp > 3) {
+                alert("Please enter a valid chest pain type (0-3).");
+                event.preventDefault();
+                return false;
+            }
+            if (trestbps < 80 || trestbps > 200) {
+                alert("Please enter a valid resting blood pressure (80-200 mm Hg).");
+                event.preventDefault();
+                return false;
+            }
+            if (chol < 100 || chol > 600) {
+                alert("Please enter a valid cholesterol level (100-600 mg/dl).");
+                event.preventDefault();
+                return false;
+            }
+            if (fbs < 0 || fbs > 1) {
+                alert("Please enter a valid fasting blood sugar (1 = true, 0 = false).");
+                event.preventDefault();
+                return false;
+            }
+            if (restecg < 0 || restecg > 2) {
+                alert("Please enter a valid resting ECG value (0-2).");
+                event.preventDefault();
+                return false;
+            }
+            if (thalach < 60 || thalach > 220) {
+                alert("Please enter a valid maximum heart rate (60-220 bpm).");
+                event.preventDefault();
+                return false;
+            }
+            if (exang < 0 || exang > 1) {
+                alert("Please enter a valid exercise-induced angina (1 = yes, 0 = no).");
+                event.preventDefault();
+                return false;
+            }
+            if (oldpeak < 0 || oldpeak > 6) {
+                alert("Please enter a valid ST depression induced by exercise (0-6).");
+                event.preventDefault();
+                return false;
+            }
+            if (slope < 0 || slope > 2) {
+                alert("Please enter a valid slope of peak exercise ST segment (0-2).");
+                event.preventDefault();
+                return false;
+            }
+            if (ca < 0 || ca > 4) {
+                alert("Please enter a valid number of major vessels (0-4).");
+                event.preventDefault();
+                return false;
+            }
+            if (thal < 0 || thal > 6) {
+                alert("Please enter a valid thalassemia value (0-6).");
+                event.preventDefault();
+                return false;
+            }
+        }
+    </script>
+</head>
+<body class="main-page">
+    <div class="container">
+        <h2>Heart Disease Detection System</h2>
+        <form name="userInputForm" onsubmit="validateForm(event);" method="POST" action="{{ url_for('predict') }}">
+            <label for="name">Name:</label>
+            <input type="text" name="name" required minlength="2" maxlength="50" pattern="[A-Za-z\s]+" title="Please enter a valid name (letters only)."><br>
+
+            <label for="age">Age (20-100):</label>
+            <input type="number" name="age" required min="20" max="100"><br>
+        
+            <label for="sex">Sex (1 = male, 0 = female):</label>
+            <input type="number" name="sex" required min="0" max="1" title="Enter 1 for male and 0 for female."><br>
+        
+            <label for="cp">Chest Pain Type (0-3):</label>
+            <input type="number" name="cp" required min="0" max="3" title="Enter a value between 0 and 3."><br>
+        
+            <label for="trestbps">Resting Blood Pressure (80-200 mm Hg):</label>
+            <input type="number" name="trestbps" required min="80" max="200" title="Enter a value between 80 and 200 mm Hg."><br>
+        
+            <label for="chol">Cholesterol (100-600 mg/dl):</label>
+            <input type="number" name="chol" required min="100" max="600" title="Enter a value between 100 and 400 mg/dl."><br>
+        
+            <label for="fbs">Fasting Blood Sugar (1 = true, 0 = false):</label>
+            <input type="number" name="fbs" required min="0" max="1" title="Enter 1 for true and 0 for false."><br>
+        
+            <label for="restecg">Resting ECG (0-2):</label>
+            <input type="number" name="restecg" required min="0" max="2" title="Enter a value between 0 and 2."><br>
+        
+            <label for="thalach">Maximum Heart Rate Achieved (60-220 bpm):</label>
+            <input type="number" name="thalach" required min="60" max="220" title="Enter a value between 60 and 220 bpm."><br>
+        
+            <label for="exang">Exercise-Induced Angina (1 = yes, 0 = no):</label>
+            <input type="number" name="exang" required min="0" max="1" title="Enter 1 for yes and 0 for no."><br>
+        
+            <label for="oldpeak">ST Depression Induced by Exercise:</label>
+            <input type="number" step="0.1" name="oldpeak" required min="0" max="6" title="Enter a value between 0 and 6."><br>
+        
+            <label for="slope">Slope of Peak Exercise ST Segment (0-2):</label>
+            <input type="number" name="slope" required min="0" max="2" title="Enter a value between 0 and 2."><br>
+        
+            <label for="ca">Number of Major Vessels (0-4):</label>
+            <input type="number" name="ca" required min="0" max="4" title="Enter a value between 0 and 4."><br>
+        
+            <label for="thal">Thalassemia (0-6):</label>
+            <input type="number" name="thal" required min="0" max="6" title="Enter a value between 0 and 6."><br>
+        
+            <button type="submit">Predict</button>
+        </form>
+
+        <!-- Add Logout button -->
+        <div>
+            <a href="{{ url_for('logout') }}">
+                <button type="button">Logout</button>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

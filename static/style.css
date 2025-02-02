@@ -1,0 +1,78 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url("../images/style-bg.jpg"); /* Add your background image */
+    background-size: cover; /* Ensure the background covers the whole screen */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent the background image from repeating */
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+label {
+    margin: 10px 0 5px;
+    display: block;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="password"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #5cb85c;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #4cae4c;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 15px;
+}
+
+.success {
+    color: green;
+}
+
+.error {
+    color: red;
+}
+
+.login-page {
+    background-color: #f4f4f4;
+}
+
+.result-page {
+    background-color: #e7f3fe;
+}

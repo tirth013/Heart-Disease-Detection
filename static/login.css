@@ -1,0 +1,82 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full height of the viewport */
+    background-image: url("../images/login-bg.jpg"); /* Add your background image */
+    background-size: cover; /* Ensure the background covers the whole screen */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent the background image from repeating */
+}
+
+.container {
+    background-color: white; /* White background for the container */
+    padding: 20px;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    width: 300px; /* Fixed width */
+}
+
+h2 {
+    text-align: center; /* Centered title */
+    color: #333; /* Dark text for title */
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style-type: none; /* Remove default list styling */
+    padding: 0;
+    margin-bottom: 20px; /* Space below the messages */
+}
+
+ul li {
+    margin-bottom: 10px; /* Space between messages */
+    padding: 10px; /* Padding inside message boxes */
+    border-radius: 5px; /* Rounded corners for messages */
+}
+
+.success {
+    background-color: #d4edda; /* Light green background for success messages */
+    color: #155724; /* Dark green text */
+}
+
+.error {
+    background-color: #f8d7da; /* Light red background for error messages */
+    color: #721c24; /* Dark red text */
+}
+
+form div {
+    margin-bottom: 15px; /* Space between form elements */
+}
+
+label {
+    display: block; /* Block display for labels */
+    margin-bottom: 5px; /* Space below labels */
+    color: #555; /* Darker color for labels */
+}
+
+input[type="text"], input[type="password"] {
+    width: 100%; /* Full width inputs */
+    padding: 10px; /* Padding inside inputs */
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 5px; /* Rounded corners for inputs */
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+button {
+    background-color: #007bff; /* Blue background for button */
+    color: white; /* White text */
+    border: none; /* No border */
+    padding: 10px; /* Padding inside button */
+    border-radius: 5px; /* Rounded corners for button */
+    cursor: pointer; /* Pointer cursor on hover */
+    width: 100%; /* Full width button */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}

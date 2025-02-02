@@ -1,0 +1,64 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url("../images/result-bg.jpg"); /* Add your background image */
+    background-size: cover; /* Ensure the background covers the whole screen */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent the background image from repeating */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full height of the viewport */
+}
+
+.container {
+    background-color: white; /* White background for the container */
+    padding: 30px; /* Padding inside the container */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    width: 90%; /* Responsive width */
+    max-width: 800px; /* Increased maximum width */
+    text-align: center; /* Center text */
+}
+
+h2 {
+    color: #007bff; /* Blue color for title */
+    margin-bottom: 20px;
+    font-size: 24px; /* Increased font size */
+    font-weight: bold; /* Bold title */
+}
+
+p {
+    color: #343a40; /* Darker text for paragraph */
+    font-size: 18px; /* Larger font size for paragraphs */
+    margin: 10px 0; /* Spacing between paragraphs */
+}
+
+strong {
+    color: #495057; /* Darker color for strong text */
+}
+
+button {
+    background-color: #007bff; /* Blue background for button */
+    color: white; /* White text */
+    border: none; /* No border */
+    padding: 10px 20px; /* Padding inside button */
+    border-radius: 5px; /* Rounded corners for button */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 16px; /* Larger font size for button */
+    margin: 100px; /* Margin between buttons */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transitions */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px; /* Adjust padding on small screens */
+    }
+}
