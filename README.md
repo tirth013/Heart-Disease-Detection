@@ -19,7 +19,7 @@ This project is a **Flask-based web application** that predicts the risk of hear
 ## **Setup Instructions**  
 1. Clone the repository:  
    ```bash
-   git clone https://github.com/your-username/heart-disease-detection.git
+   git clone https://github.com/tirth013/heart-disease-detection.git
    cd heart-disease-detection
    ```  
 2. Install dependencies:  
